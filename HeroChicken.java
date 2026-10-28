@@ -184,12 +184,6 @@ final class HeroChicken extends Chicken {
         fx.burst(centerX(), centerY(), Color.WHITE, 5);
     }
 
-    /** ตามเป้าหมายแบบนุ่มๆ ตอนเดินสำรวจ */
-    public final void follow(double targetX, double targetY) {
-        double dx = targetX - x(), dy = targetY - y();
-        if (Math.hypot(dx, dy) > 50) translate(dx * 0.05, dy * 0.05);
-    }
-
     @Override
     protected void drawAura(Graphics2D g) {
         if (doubleDamage) drawRing(g, UI.RED, 5);

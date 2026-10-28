@@ -13,7 +13,7 @@ final class MenuScene extends Scene {
 
     MenuScene(KaiDeng game) {
         super(game);
-        start = new Button(new Rectangle(280, 290, 240, 52), "Start game", () -> goTo(new SelectScene(game)));
+        start = new Button(new Rectangle(280, 290, 240, 52), "Play", () -> goTo(new SelectScene(game)));
         exit = new Button(new Rectangle(280, 354, 240, 52), "Exit", game::exit);
         buttons = List.of(start, exit);
     }

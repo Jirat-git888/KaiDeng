@@ -32,8 +32,6 @@ public class KaiDeng extends JPanel {
 
     static final Rectangle ARENA = new Rectangle(200, 150, 400, 300);
 
-    static final Point PLAYER_START = new Point(400, 300);
-    static final Point BOSS_EXPLORE_SPAWN = new Point(400, 250);
     static final Point BOSS_BATTLE_SPAWN = new Point(500, 250);
     static final Point HERO_BATTLE_SPAWN = new Point(250, 200);   // ตัวถัดไปเลื่อนลงทีละ HERO_SPAWN_GAP
     static final int HERO_SPAWN_GAP = 80;
