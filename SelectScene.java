@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-/** หน้าเลือกทีมฮีโร่ (เลือกครบแล้วไปหน้าเดินสำรวจทันที) */
+/** หน้าเลือกทีมฮีโร่ (เลือกครบแล้วเริ่มต่อสู้ทันที) */
 final class SelectScene extends Scene {
     private final List<HeroCard> cards = new ArrayList<>();
     private final List<HeroChicken.Type> picked = new ArrayList<>();
@@ -26,7 +26,12 @@ final class SelectScene extends Scene {
                 picked.add(card.type());
             }
         }
-        if (isFull()) goTo(new ExploreScene(game(), picked));
+        if (isFull()) {
+            List<HeroChicken> team = new ArrayList<>();
+            for (HeroChicken.Type type : picked) team.add(type.create());
+            BossChicken boss = new BossChicken(KaiDeng.BOSS_BATTLE_SPAWN.x, KaiDeng.BOSS_BATTLE_SPAWN.y);
+            goTo(new BattleScene(game(), team, boss));
+        }
     }
 
     @Override
